@@ -1,0 +1,13 @@
+-- TEMPLATE ONLY. These identifiers are fixed for V1 until captured live DDL is refactored.
+-- Run with authorized CREATE WAREHOUSE / CREATE DATABASE privileges.
+CREATE WAREHOUSE IF NOT EXISTS {{ warehouse }}
+  WAREHOUSE_SIZE = {{ warehouse_size }}
+  AUTO_SUSPEND = {{ warehouse_auto_suspend_seconds }}
+  AUTO_RESUME = TRUE
+  INITIALLY_SUSPENDED = TRUE;
+CREATE DATABASE IF NOT EXISTS {{ database }};
+CREATE SCHEMA IF NOT EXISTS {{ database }}.CONFIG;
+CREATE SCHEMA IF NOT EXISTS {{ database }}.ENGINE;
+CREATE SCHEMA IF NOT EXISTS {{ database }}.RESULTS;
+CREATE SCHEMA IF NOT EXISTS {{ database }}.MONITORING;
+CREATE SCHEMA IF NOT EXISTS {{ database }}.PRACTICE;

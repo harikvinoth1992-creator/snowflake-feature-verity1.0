@@ -1,0 +1,4 @@
+-- AUTO-GENERATED from operator-provided config. REVIEW BEFORE RUNNING.
+-- USER MAPPING: apply only after explicit target-account admin approval.
+-- This file does not grant the internal TASK_EXEC role to any human.
+-- NO USERS CONFIGURED. No role-to-user grants generated.

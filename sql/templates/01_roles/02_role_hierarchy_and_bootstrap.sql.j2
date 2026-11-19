@@ -1,0 +1,8 @@
+-- TEMPLATE ONLY: owner must approve role hierarchy and self-grant.
+USE ROLE SECURITYADMIN;
+-- ADMIN inherits only RUNTIME; STEWARD and TASK_SERVICE remain separate.
+{{ admin_runtime_hierarchy_sql }}
+{{ sysadmin_hierarchy_sql }}
+
+-- Current Snowflake session user, not a hardcoded username.
+{{ self_grant_sql }}

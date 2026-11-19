@@ -1,0 +1,7 @@
+-- AUTO-GENERATED from operator-provided config. REVIEW BEFORE RUNNING.
+-- INTEGRATION VERITY_V1_0_EMAIL_INT: verify actual integration name and ALLOWED_RECIPIENTS.
+-- Notification requested: FALSE.
+-- NOT EXECUTABLE by default: inspect SP_DQ_NOTIFY_DRAFT_RULES DDL for EXECUTE AS.
+-- Grant USAGE ON INTEGRATION to the effective execution role only after approval.
+-- Example, if CALLER rights (verify before uncommenting):
+-- GRANT USAGE ON INTEGRATION VERITY_V1_0_EMAIL_INT TO ROLE VERITY_V1_0_EXEC_DE_PIPELINE;

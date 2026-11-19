@@ -1,0 +1,15 @@
+-- Requires review of *actual* source SEMANTIC VIEW and AGENT names.
+-- Before granting anything, record exact names with SHOW SEMANTIC VIEWS / SHOW AGENTS.
+-- Example, UNCOMMENT ONLY after verified from live catalog:
+-- GRANT SELECT ON SEMANTIC VIEW VERITY_V1_0.MONITORING.<ACTUAL_SEMANTIC_VIEW>
+--   TO ROLE VERITY_V1_0_VIEWER;
+-- GRANT USAGE ON AGENT VERITY_V1_0.MONITORING.VERITY_AI_ASSISTANT
+--   TO ROLE VERITY_V1_0_VIEWER;
+-- CREATE/USAGE privileges alone do not authorize semantic-view data access; verify SELECT.
+-- Example grant for CALLER-rights email notifier (effective role based on its DDL):
+-- GRANT USAGE ON INTEGRATION VERITY_V1_0_EMAIL_INT
+--   TO ROLE VERITY_V1_0_EXEC_DE_PIPELINE;
+-- If notification runs owner-rights, grant integration usage to its *owning* role instead.
+-- GRANT INSERT, SELECT ON TABLE VERITY_V1_0.RESULTS.DQ_RULE_NOTIFICATION_LOG
+--   TO ROLE VERITY_V1_0_EXEC_DE_PIPELINE;
+-- Only include actual required operations from notification procedure DDL.

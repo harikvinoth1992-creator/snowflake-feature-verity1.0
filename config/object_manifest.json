@@ -1,0 +1,344 @@
+{
+  "version": "1.0-recovery",
+  "source_account_ddl_verified": false,
+  "project_db_name_frozen": "VERITY_V1_0",
+  "install_strategy": "new_empty_account_only; no automatic overwrite",
+  "objects": [
+    {
+      "type": "TABLE",
+      "name": "VERITY_V1_0.CONFIG.DQ_SOURCE",
+      "phase": "03",
+      "path": "sql/03_tables/live/DQ_SOURCE.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "TABLE",
+      "name": "VERITY_V1_0.CONFIG.DQ_RULE_CATALOG",
+      "phase": "03",
+      "path": "sql/03_tables/live/DQ_RULE_CATALOG.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "TABLE",
+      "name": "VERITY_V1_0.MONITORING.DQ_METRIC_HISTORY",
+      "phase": "03",
+      "path": "sql/03_tables/live/DQ_METRIC_HISTORY.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "TABLE",
+      "name": "VERITY_V1_0.RESULTS.DQ_RUN",
+      "phase": "03",
+      "path": "sql/03_tables/live/DQ_RUN.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "TABLE",
+      "name": "VERITY_V1_0.RESULTS.DQ_RULE_RESULT",
+      "phase": "03",
+      "path": "sql/03_tables/live/DQ_RULE_RESULT.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "TABLE",
+      "name": "VERITY_V1_0.RESULTS.DQ_RULE_APPROVAL_AUDIT",
+      "phase": "03",
+      "path": "sql/03_tables/live/DQ_RULE_APPROVAL_AUDIT.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "TABLE",
+      "name": "VERITY_V1_0.RESULTS.DQ_RULE_NOTIFICATION_LOG",
+      "phase": "03",
+      "path": "sql/03_tables/live/DQ_RULE_NOTIFICATION_LOG.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "TABLE",
+      "name": "VERITY_V1_0.RESULTS.DQ_APPROVAL_VALIDATION_QUEUE",
+      "phase": "03",
+      "path": "sql/03_tables/live/DQ_APPROVAL_VALIDATION_QUEUE.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "TABLE",
+      "name": "VERITY_V1_0.RESULTS.DQ_POST_LOAD_RUN",
+      "phase": "03",
+      "path": "sql/03_tables/live/DQ_POST_LOAD_RUN.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "TABLE",
+      "name": "VERITY_V1_0.RESULTS.DQ_VALIDATION_RECOVERY_AUDIT",
+      "phase": "03",
+      "path": "sql/03_tables/live/DQ_VALIDATION_RECOVERY_AUDIT.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "VIEW",
+      "name": "VERITY_V1_0.MONITORING.V_DQ_PROFILE_EVIDENCE",
+      "phase": "05",
+      "path": "sql/05_views/live/V_DQ_PROFILE_EVIDENCE.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "PROCEDURE",
+      "name": "VERITY_V1_0.ENGINE.SP_DQ_ONBOARD_TABLE(VARCHAR)",
+      "phase": "06",
+      "path": "sql/06_procedures/live/SP_DQ_ONBOARD_TABLE.sql",
+      "required": true,
+      "note": "Signature and existence must be verified by SHOW PROCEDURES"
+    },
+    {
+      "type": "PROCEDURE",
+      "name": "VERITY_V1_0.ENGINE.SP_DQ_PROFILE_TABLE(VARCHAR)",
+      "phase": "06",
+      "path": "sql/06_procedures/live/SP_DQ_PROFILE_TABLE.sql",
+      "required": true,
+      "note": "Signature and existence must be verified by SHOW PROCEDURES"
+    },
+    {
+      "type": "PROCEDURE",
+      "name": "VERITY_V1_0.ENGINE.SP_DQ_STAGE_AI_RECOMMENDATION(NUMBER,VARCHAR,VARCHAR,VARIANT,VARCHAR,VARCHAR)",
+      "phase": "06",
+      "path": "sql/06_procedures/live/SP_DQ_STAGE_AI_RECOMMENDATION.sql",
+      "required": true,
+      "note": "Signature and existence must be verified by SHOW PROCEDURES"
+    },
+    {
+      "type": "PROCEDURE",
+      "name": "VERITY_V1_0.ENGINE.SP_DQ_AUTO_STAGE_PROFILE_DRAFTS(NUMBER)",
+      "phase": "06",
+      "path": "sql/06_procedures/live/SP_DQ_AUTO_STAGE_PROFILE_DRAFTS.sql",
+      "required": true,
+      "note": "Signature and existence must be verified by SHOW PROCEDURES"
+    },
+    {
+      "type": "PROCEDURE",
+      "name": "VERITY_V1_0.ENGINE.SP_DQ_GENERATE_AI_RECOMMENDATIONS(NUMBER)",
+      "phase": "06",
+      "path": "sql/06_procedures/live/SP_DQ_GENERATE_AI_RECOMMENDATIONS.sql",
+      "required": true,
+      "note": "Signature and existence must be verified by SHOW PROCEDURES"
+    },
+    {
+      "type": "PROCEDURE",
+      "name": "VERITY_V1_0.ENGINE.SP_DQ_NOTIFY_DRAFT_RULES(NUMBER,VARCHAR)",
+      "phase": "06",
+      "path": "sql/06_procedures/live/SP_DQ_NOTIFY_DRAFT_RULES.sql",
+      "required": true,
+      "note": "Signature and existence must be verified by SHOW PROCEDURES"
+    },
+    {
+      "type": "PROCEDURE",
+      "name": "VERITY_V1_0.ENGINE.SP_DQ_APPROVE_PROFILE_RULE(NUMBER,VARCHAR)",
+      "phase": "06",
+      "path": "sql/06_procedures/live/SP_DQ_APPROVE_PROFILE_RULE.sql",
+      "required": true,
+      "note": "Signature and existence must be verified by SHOW PROCEDURES"
+    },
+    {
+      "type": "PROCEDURE",
+      "name": "VERITY_V1_0.ENGINE.SP_DQ_EXECUTE_HYBRID_V1_0(VARCHAR)",
+      "phase": "06",
+      "path": "sql/06_procedures/live/SP_DQ_EXECUTE_HYBRID_V1_0.sql",
+      "required": true,
+      "note": "Signature and existence must be verified by SHOW PROCEDURES"
+    },
+    {
+      "type": "PROCEDURE",
+      "name": "VERITY_V1_0.ENGINE.SP_DQ_ONBOARD_AND_NOTIFY(VARCHAR,VARCHAR)",
+      "phase": "06",
+      "path": "sql/06_procedures/live/SP_DQ_ONBOARD_AND_NOTIFY.sql",
+      "required": false,
+      "note": "Signature and existence must be verified by SHOW PROCEDURES"
+    },
+    {
+      "type": "PROCEDURE",
+      "name": "VERITY_V1_0.ENGINE.SP_DQ_ONBOARD_AND_NOTIFY_AI(VARCHAR,VARCHAR)",
+      "phase": "06",
+      "path": "sql/06_procedures/live/SP_DQ_ONBOARD_AND_NOTIFY_AI.sql",
+      "required": true,
+      "note": "Signature and existence must be verified by SHOW PROCEDURES"
+    },
+    {
+      "type": "PROCEDURE",
+      "name": "VERITY_V1_0.ENGINE.SP_DQ_POST_LOAD_VALIDATE(VARCHAR,VARCHAR)",
+      "phase": "06",
+      "path": "sql/06_procedures/live/SP_DQ_POST_LOAD_VALIDATE.sql",
+      "required": true,
+      "note": "Signature and existence must be verified by SHOW PROCEDURES"
+    },
+    {
+      "type": "PROCEDURE",
+      "name": "VERITY_V1_0.ENGINE.SP_DQ_PROCESS_APPROVAL_VALIDATIONS()",
+      "phase": "07",
+      "path": "sql/06_procedures/live/SP_DQ_PROCESS_APPROVAL_VALIDATIONS.sql",
+      "required": true,
+      "note": "Signature and existence must be verified by SHOW PROCEDURES"
+    },
+    {
+      "type": "STREAM",
+      "name": "VERITY_V1_0.RESULTS.ST_DQ_RULE_ACTIVATIONS",
+      "phase": "07",
+      "path": "sql/07_streams/live/ST_DQ_RULE_ACTIVATIONS.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "TASK",
+      "name": "VERITY_V1_0.ENGINE.TK_DQ_VALIDATE_APPROVED_RULES",
+      "phase": "08",
+      "path": "sql/08_tasks/live/TK_DQ_VALIDATE_APPROVED_RULES.sql",
+      "required": true,
+      "note": ""
+    },
+    {
+      "type": "SEMANTIC_VIEW",
+      "name": "VERITY_V1_0.MONITORING.VERITY_DQ_SEMANTIC_VIEW",
+      "phase": "09",
+      "path": "sql/09_semantic_views/live/VERITY_DQ_SEMANTIC_VIEW.sql",
+      "required": false,
+      "note": "Illustrative name ONLY. Replace with every real name found by SHOW SEMANTIC VIEWS; then set required=true."
+    },
+    {
+      "type": "CORTEX_AGENT",
+      "name": "VERITY_V1_0.MONITORING.VERITY_AI_ASSISTANT",
+      "phase": "10",
+      "path": "sql/10_agents/live/VERITY_AI_ASSISTANT.sql",
+      "required": false,
+      "note": "Previously documented interactive agent; verify presence by SHOW AGENTS. If live, set required=true."
+    },
+    {
+      "type": "DATABASE",
+      "name": "VERITY_V1_0",
+      "phase": "02",
+      "path": "sql/02_infrastructure/01_database_warehouse_schemas.sql",
+      "required": true,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    },
+    {
+      "type": "WAREHOUSE",
+      "name": "VERITY_V1_0_WH",
+      "phase": "02",
+      "path": "sql/02_infrastructure/01_database_warehouse_schemas.sql",
+      "required": true,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    },
+    {
+      "type": "SCHEMA",
+      "name": "VERITY_V1_0.CONFIG",
+      "phase": "02",
+      "path": "sql/02_infrastructure/01_database_warehouse_schemas.sql",
+      "required": true,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    },
+    {
+      "type": "SCHEMA",
+      "name": "VERITY_V1_0.ENGINE",
+      "phase": "02",
+      "path": "sql/02_infrastructure/01_database_warehouse_schemas.sql",
+      "required": true,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    },
+    {
+      "type": "SCHEMA",
+      "name": "VERITY_V1_0.RESULTS",
+      "phase": "02",
+      "path": "sql/02_infrastructure/01_database_warehouse_schemas.sql",
+      "required": true,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    },
+    {
+      "type": "SCHEMA",
+      "name": "VERITY_V1_0.MONITORING",
+      "phase": "02",
+      "path": "sql/02_infrastructure/01_database_warehouse_schemas.sql",
+      "required": true,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    },
+    {
+      "type": "SCHEMA",
+      "name": "VERITY_V1_0.PRACTICE",
+      "phase": "02",
+      "path": "sql/02_infrastructure/01_database_warehouse_schemas.sql",
+      "required": true,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    },
+    {
+      "type": "ROLE",
+      "name": "VERITY_V1_0_ADMIN",
+      "phase": "01",
+      "path": "sql/01_roles/01_create_roles.sql",
+      "required": true,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    },
+    {
+      "type": "ROLE",
+      "name": "VERITY_V1_0_EXEC_DE_PIPELINE",
+      "phase": "01",
+      "path": "sql/01_roles/01_create_roles.sql",
+      "required": true,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    },
+    {
+      "type": "ROLE",
+      "name": "VERITY_V1_0_STEWARD",
+      "phase": "01",
+      "path": "sql/01_roles/01_create_roles.sql",
+      "required": true,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    },
+    {
+      "type": "ROLE",
+      "name": "VERITY_V1_0_VIEWER",
+      "phase": "01",
+      "path": "sql/01_roles/01_create_roles.sql",
+      "required": true,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    },
+    {
+      "type": "ROLE",
+      "name": "VERITY_V1_0_TASK_EXEC",
+      "phase": "01",
+      "path": "sql/01_roles/01_create_roles.sql",
+      "required": true,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    },
+    {
+      "type": "NOTIFICATION_INTEGRATION",
+      "name": "VERITY_V1_0_EMAIL_INT",
+      "phase": "11",
+      "path": "sql/11_notifications/01_email_integration_review.sql",
+      "required": false,
+      "metadata_only": true,
+      "note": "Account metadata or provisioned infrastructure; verify actual source identity and grants; integration name must be confirmed."
+    }
+  ],
+  "additional_discovered_objects": [],
+  "live_inventory_file": "inventory/source_inventory.csv",
+  "baseline_grants_source": "inventory/grants_source.csv"
+}

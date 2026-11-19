@@ -1,0 +1,8 @@
+-- TEMPLATE ONLY: render through scripts/render_config.py before Snowsight execution.
+-- Execute with SECURITYADMIN (or authorized CREATE ROLE / MANAGE GRANTS role).
+USE ROLE SECURITYADMIN;
+CREATE ROLE IF NOT EXISTS {{ admin_role }};
+CREATE ROLE IF NOT EXISTS {{ runtime_role }};
+CREATE ROLE IF NOT EXISTS {{ steward_role }};
+CREATE ROLE IF NOT EXISTS {{ viewer_role }};
+CREATE ROLE IF NOT EXISTS {{ task_service_role }};

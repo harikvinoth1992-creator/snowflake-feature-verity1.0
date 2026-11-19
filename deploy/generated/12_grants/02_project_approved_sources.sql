@@ -1,0 +1,3 @@
+-- AUTO-GENERATED from operator-provided config. REVIEW BEFORE RUNNING.
+-- Requires project table owner approval in source inventory.
+-- NO APPROVED PROJECT SOURCES: no source SELECT grants generated.

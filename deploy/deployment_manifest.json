@@ -1,0 +1,147 @@
+{
+  "phases": [
+    {
+      "phase": "00",
+      "title": "Emergency SOURCE account export",
+      "files": [
+        "sql/00_export/00_emergency_backup.sql"
+      ]
+    },
+    {
+      "phase": "01",
+      "title": "Create roles",
+      "files": [
+        "sql/01_roles/01_create_roles.sql"
+      ]
+    },
+    {
+      "phase": "02",
+      "title": "Warehouse/database/schemas",
+      "files": [
+        "sql/02_infrastructure/01_database_warehouse_schemas.sql"
+      ]
+    },
+    {
+      "phase": "03",
+      "title": "Actual core tables and sequences",
+      "files": [
+        "sql/03_tables/live/DQ_SOURCE.sql",
+        "sql/03_tables/live/DQ_RULE_CATALOG.sql",
+        "sql/03_tables/live/DQ_METRIC_HISTORY.sql",
+        "sql/03_tables/live/DQ_RUN.sql",
+        "sql/03_tables/live/DQ_RULE_RESULT.sql",
+        "sql/03_tables/live/DQ_RULE_APPROVAL_AUDIT.sql",
+        "sql/03_tables/live/DQ_RULE_NOTIFICATION_LOG.sql",
+        "sql/03_tables/live/DQ_APPROVAL_VALIDATION_QUEUE.sql",
+        "sql/03_tables/live/DQ_POST_LOAD_RUN.sql",
+        "sql/03_tables/live/DQ_VALIDATION_RECOVERY_AUDIT.sql"
+      ]
+    },
+    {
+      "phase": "04",
+      "title": "Project synthetic sample schemas/tables",
+      "files": [
+        "sql/04_sample_projects/01_synthetic_project_a.sql",
+        "sql/04_sample_projects/02_synthetic_project_b.sql"
+      ]
+    },
+    {
+      "phase": "05",
+      "title": "Actual base views",
+      "files": [
+        "sql/05_views/live/V_DQ_PROFILE_EVIDENCE.sql"
+      ]
+    },
+    {
+      "phase": "06",
+      "title": "Actual stored procedure definitions",
+      "files": [
+        "sql/06_procedures/live/SP_DQ_ONBOARD_TABLE.sql",
+        "sql/06_procedures/live/SP_DQ_PROFILE_TABLE.sql",
+        "sql/06_procedures/live/SP_DQ_STAGE_AI_RECOMMENDATION.sql",
+        "sql/06_procedures/live/SP_DQ_AUTO_STAGE_PROFILE_DRAFTS.sql",
+        "sql/06_procedures/live/SP_DQ_GENERATE_AI_RECOMMENDATIONS.sql",
+        "sql/06_procedures/live/SP_DQ_NOTIFY_DRAFT_RULES.sql",
+        "sql/06_procedures/live/SP_DQ_APPROVE_PROFILE_RULE.sql",
+        "sql/06_procedures/live/SP_DQ_EXECUTE_HYBRID_V1_0.sql",
+        "sql/06_procedures/live/SP_DQ_ONBOARD_AND_NOTIFY_AI.sql",
+        "sql/06_procedures/live/SP_DQ_POST_LOAD_VALIDATE.sql"
+      ]
+    },
+    {
+      "phase": "07",
+      "title": "Streams, then Stream-dependent dispatcher procedure",
+      "files": [
+        "sql/07_streams/live/ST_DQ_RULE_ACTIVATIONS.sql",
+        "sql/06_procedures/live/SP_DQ_PROCESS_APPROVAL_VALIDATIONS.sql"
+      ]
+    },
+    {
+      "phase": "08",
+      "title": "Actual suspended Tasks",
+      "files": [
+        "sql/08_tasks/live/TK_DQ_VALIDATE_APPROVED_RULES.sql"
+      ]
+    },
+    {
+      "phase": "09",
+      "title": "All actually existing semantic views",
+      "files": []
+    },
+    {
+      "phase": "10",
+      "title": "Actual VERITY_AI_ASSISTANT Cortex agent (if present)",
+      "files": []
+    },
+    {
+      "phase": "11",
+      "title": "Notification integration",
+      "files": [
+        "sql/11_notifications/01_email_integration_review.sql"
+      ]
+    },
+    {
+      "phase": "12",
+      "title": "Reviewed grants / ownership",
+      "files": [
+        "sql/12_grants/01_project_runtime_hardened_base.sql",
+        "sql/12_grants/02_project_de_approved_table.sql",
+        "sql/12_grants/03_steward_viewer.sql",
+        "sql/12_grants/04_task_service.sql",
+        "sql/12_grants/05_nested_orchestration_procedures_REVIEW_FIRST.sql",
+        "sql/12_grants/06_admin_creation_grants.sql",
+        "sql/12_grants/07_semantic_agent_email_REVIEW_FIRST.sql"
+      ]
+    },
+    {
+      "phase": "13",
+      "title": "Approved seed / source registration",
+      "files": []
+    },
+    {
+      "phase": "14",
+      "title": "Validation and RBAC negatives",
+      "files": [
+        "sql/14_validation/01_read_only_smoke.sql",
+        "sql/14_validation/02_six_rule_fixture_checks.sql",
+        "sql/14_validation/03_integrated_call_templates.sql",
+        "sql/14_validation/04_security_negative_templates.sql"
+      ]
+    },
+    {
+      "phase": "15",
+      "title": "Optional task activation",
+      "files": [
+        "sql/15_activate/01_manual_task_then_opt_in.sql"
+      ]
+    },
+    {
+      "phase": "16",
+      "title": "Reconcile source and target inventories",
+      "files": [
+        "sql/16_reconcile/01_final_catalog.sql"
+      ]
+    }
+  ],
+  "note": "Phase 00 is performed on SOURCE, others NEW account only. Actual DDL files are missing until operator exports."
+}

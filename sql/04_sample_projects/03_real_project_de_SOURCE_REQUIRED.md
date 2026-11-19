@@ -1,0 +1,2 @@
+# Restore `DE_PIPELINE_POC_DB.LAB.ORDER_FULFILMENT`
+Do NOT create a guessed table schema. Its six columns and four pilot rows must be copied from the real original database DDL and approved sample-data export. If original data is sensitive, substitute explicitly reviewed sanitized records **only after keeping a protected backup**. Restore project schema/DDL before attempting runtime grants, then verify SELECT under the DE runtime role.

@@ -1,0 +1,7 @@
+# Deprecated separate example. Use role_assignments in config/verity.example.yaml.
+# The configuration renderer reads ONLY the unified deployment config.
+role_assignments:
+  admin_users: []
+  runtime_de_users: []
+  steward_users: []
+  viewer_users: []

@@ -1,0 +1,47 @@
+# Copy to config/verity.local.yaml; DO NOT commit your local file.
+# Python renderer reads YAML if PyYAML is available; JSON fallback requires no packages.
+environment: new_account_dev
+connection: SNOWFLAKE_CONNECTION_CONFIGURED_OUTSIDE_GIT
+# IMPORTANT: source stored procedures still hardcode the database below.
+# Release 1 enforces these names until live DDL is captured and safely refactored.
+database: VERITY_V1_0
+warehouse: VERITY_V1_0_WH
+warehouse_size: XSMALL
+warehouse_auto_suspend_seconds: 60
+roles:
+  admin: VERITY_V1_0_ADMIN
+  runtime_project_de: VERITY_V1_0_EXEC_DE_PIPELINE
+  steward: VERITY_V1_0_STEWARD
+  viewer: VERITY_V1_0_VIEWER
+  task_service: VERITY_V1_0_TASK_EXEC
+# SQL templates in sql/templates/ contain {{ admin_role }} / {{ runtime_role }} etc.
+# Self-grant is optional and affects only the authorized bootstrap operator.
+bootstrap:
+  grant_admin_to_current_user: false
+  runtime_under_admin: true
+  admin_under_sysadmin: true
+# Use actual TARGET-account usernames, never hardcode personal users in SQL.
+role_assignments:
+  admin_users: []
+  runtime_de_users: []
+  steward_users: []
+  viewer_users: []
+# Only sources approved:true receive generated SELECT grants.
+project_sources:
+  - name: DE_PIPELINE_POC_DB.LAB.ORDER_FULFILMENT
+    approved: false
+notifications:
+  integration: VERITY_V1_0_EMAIL_INT  # replace after inspecting live integration
+  verified_recipient: REPLACE_WITH_VERIFIED_ACCOUNT_USER_EMAIL
+  enabled: false
+cortex:
+  recommendation_model: llama3.3-70b
+  interactive_agent: VERITY_V1_0.MONITORING.VERITY_AI_ASSISTANT
+  agent_enabled: false
+scheduled_task:
+  name: VERITY_V1_0.ENGINE.TK_DQ_VALIDATE_APPROVED_RULES
+  schedule: '1 MINUTE'
+  enabled_on_install: false
+release:
+  strict_live_ddl: true
+  enforce_object_reconciliation: true

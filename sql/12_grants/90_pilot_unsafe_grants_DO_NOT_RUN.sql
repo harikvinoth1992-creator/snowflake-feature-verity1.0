@@ -1,0 +1,8 @@
+-- HISTORICAL TEST ENVIRONMENT GRANTS — DO NOT EXECUTE AS PRODUCTION SETUP.
+-- Temporary caller-rights onboarding privileges bypass controlled proposal governance.
+-- GRANT INSERT, UPDATE ON TABLE VERITY_V1_0.CONFIG.DQ_SOURCE
+--   TO ROLE VERITY_V1_0_EXEC_DE_PIPELINE;
+-- GRANT INSERT ON TABLE VERITY_V1_0.CONFIG.DQ_RULE_CATALOG
+--   TO ROLE VERITY_V1_0_EXEC_DE_PIPELINE;
+-- Replacement required: owner-rights onboarding with project source authorization
+-- and DRAFT-only insert gateway, negative RBAC tests, then REVOKE both direct writes.
