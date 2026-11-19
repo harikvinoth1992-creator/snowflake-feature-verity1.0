@@ -1,4 +1,4 @@
-# As-built architecture, dependencies and deployment boundary
+# As-built architecture
 
 ```mermaid
 flowchart LR
